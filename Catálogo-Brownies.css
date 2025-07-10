@@ -1,0 +1,223 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fffdfb;
+  color: #333;
+}
+
+.cabecalho {
+  background-color: #fef6f2;
+}
+
+.logo-topo {
+  width: 100%;
+  height: auto;
+  max-height: 240px;
+  object-fit: contain;
+  display: block;
+  background-color: #F6ECE3;
+  margin: 0;
+}
+
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.info-loja {
+  padding: 0px 0px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.linha-loja {
+  display: flex;
+  padding: 0px 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.avatar-wrapper {
+  background: #fff;
+  border-radius: 50%;
+  padding: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit:contain;
+  border: 0px solid #ccc;
+}
+
+.dados {
+  flex: 1;
+  margin: 0 10px;
+}
+
+.dados h1 {
+  font-size: 18px;
+  margin-left: 8px;
+  margin-bottom: 6px;
+}
+
+.dados p {
+  font-size: 13px;
+  color: #666;
+  
+  margin: 4px 0 0;
+}
+
+.acoes button {
+  font-size: 15px;
+  padding: 4px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.aviso {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-left: 10px;
+  font-size: 11px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  width: fit-content;
+}
+
+.linha-divisoria {
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+.titulo-secao {
+  background: #F3F3F3;
+  padding: 0px 0;
+  width: 100%;
+}
+
+.titulo-secao .container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.titulo-secao h2 {
+  font-size: 14px;
+  color:#3D3D3D ;
+  font-weight: 700;
+  margin: 0;
+}
+
+.linha-ativa {
+  width: 100px;
+  height: 3px;
+  background-color: #444;
+  margin: 4px 0;
+}
+
+.conteudo {
+  padding: 10px 0 30px;
+}
+
+.subtitulo {
+  font-size: 14px;
+  color: #666;
+  margin: 20px 0 10px;
+}
+
+.grid-produtos {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+}
+
+.produto {
+  min-width: 130px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 10px;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.produto img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.produto .nome {
+  font-size: 14px;
+  display: block;
+}
+
+.produto .preco {
+  font-size: 13px;
+  color: #666;
+}
+
+.lista .item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.item img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-left: 10px;
+}
+
+.texto {
+  flex: 1;
+}
+
+.texto p {
+  margin: 5px 0;
+  font-size: 13px;
+  color: #666;
+}
+
+.texto span {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.rodape {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  font-size: 13px;
+}
+
+.rodape a {
+  text-decoration: none;
+  color: #555;
+  text-align: center;
+}
