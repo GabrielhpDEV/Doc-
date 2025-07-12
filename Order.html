@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulário WhatsApp</title>
+  <link rel="stylesheet" href="order.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Identifique-se</h2>
+
+    <form id="pedidoForm">
+      <label for="telefone">Telefone:</label>
+      <input
+        type="tel"
+        id="telefone"
+        name="telefone"
+        placeholder="(__) 9____-____"
+        maxlength="11"
+        required
+        inputmode="numeric"
+      />
+
+      <label for="nome">Nome:</label>
+      <input
+        type="text"
+        id="nome"
+        name="nome"
+        placeholder="Nome completo"
+        required
+        disabled
+      />
+
+      <button type="submit" disabled>Enviar</button>
+    </form>
+  </div>
+
+  <script>
+    const telefone = document.getElementById('telefone');
+    const nome = document.getElementById('nome');
+    const botao = document.querySelector('button');
+    const form = document.getElementById('pedidoForm');
+
+    telefone.addEventListener('input', () => {
+      telefone.value = telefone.value.replace(/\D/g, '').slice(0, 11);
+      nome.disabled = telefone.value.length < 10;
+      botao.disabled = nome.disabled || nome.value.trim().length < 3;
+    });
+
+    nome.addEventListener('input', () => {
+      botao.disabled = nome.value.trim().length < 3 || telefone.value.length < 10;
+    });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      botao.textContent = "Enviando...";
+      botao.disabled = true;
+
+      const dados = {
+        telefone: telefone.value,
+        nome: nome.value
+      };
+
+      fetch("https://script.google.com/macros/s/AKfycbwJeKrt79cwDCdVpBdl4VaX_6cnClmQiWaQ79hppM6qyOYvt9Fpx9BFnCk-FxPksMO2oQ/exec", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(dados)
+      })
+      .then(response => response.text())
+      .then(msg => {
+        alert("✅ Pedido enviado com sucesso!");
+        form.reset();
+        nome.disabled = true;
+        botao.disabled = true;
+        botao.textContent = "Enviar";
+      })
+      .catch(error => {
+        alert("❌ Erro ao enviar. Detalhes no console.");
+        console.error("Erro:", error);
+        botao.textContent = "Enviar";
+        botao.disabled = false;
+      });
+    });
+  </script>
+</body>
+</html>
